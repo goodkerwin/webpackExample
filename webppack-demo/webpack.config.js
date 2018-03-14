@@ -1,12 +1,30 @@
 const  path=require('path');
+const  HtmlWebpackPlugin = require('html-webpack-plugin');
+const  CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry:'./src/index.js',
-    output :{
-        filename:'bundle.js',
-        path:path.resolve(__dirname,"dist")
+    // entry:'./src/index.js',
+    entry: {
+        app: './src/index.js',
+        print: './src/js/print.js',
     },
-    module:{
+    output :{
+        // filename:'bundle.js',
+        filename: '[name].bundle.js',
+        path:path.resolve(__dirname,"dist"),
+        publicPath: '/'
+    },
+    devtool: 'none',
+    devServer: {
+        contentBase : './dist' //web服务器自动重新加载编译后代码
+    },
+    plugins: [
+        new CleanWebpackPlugin(['dist']),//清理dist文件夹
+        new HtmlWebpackPlugin({
+            title : 'Output Management'
+        })
+    ]
+   /* module:{
         rules : [
             {
                 test: /\.css$/,
@@ -29,5 +47,5 @@ module.exports = {
                 use: ['xml-loader']
             },//加载文件
         ]
-    }
+    }*/
 };
