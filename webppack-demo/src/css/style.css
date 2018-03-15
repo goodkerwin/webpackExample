@@ -8,5 +8,9 @@
 .hello{
     color: red;
    /* font-size: 20px;*/
-    font-family: 'myFont';
+    font-family: 'myFont';   
+}
+
+body{
+    background: rgba(255,0,0,.1)
 }
