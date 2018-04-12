@@ -1,10 +1,11 @@
 import _ from 'lodash';
 import './css/style.css';
-/*import Icon from './images/equipments.png';
-import Data from './files/data.xml';*/
+import Icon from './images/equipments.png';
+import Data from './files/data.xml';
 import printMe from './js/print.js';
 
-function component() {
+
+  function component() {
     var element = document.createElement('div');
     element.innerHTML = _.join(['Hello', 'webpack!123'], ' ');
 
@@ -13,14 +14,13 @@ function component() {
     btn.onclick = printMe;
     element.appendChild(btn);
     
- 
-  /*  element.classList.add('hello');
+   element.classList.add('hello');
 
     var myIcon = new Image();
     myIcon.src = Icon;
     element.appendChild(myIcon);
 
-    console.log(Data);*/
+    console.log(Data);
 
     
 
@@ -29,7 +29,7 @@ function component() {
 
 
 }
-
+/*
 //document.body.appendChild(component());
 let element = component(); //当print.js改变导致页面重新渲染  需重新获取渲染元素
 document.body.appendChild(element);
@@ -43,3 +43,19 @@ if(module.hot){
         document.body.appendChild(element);
     })
 }
+
+
+import {cube} from './js/math.js'
+
+function component(){
+    var element = document.createElement('pre');
+
+    element.innerHTML = [
+        'hello webpack!',
+        '5 cubed is equal to ' + cube(5)
+    ].join('\n\n')
+
+    return element
+}*/
+
+document.body.appendChild( component() );

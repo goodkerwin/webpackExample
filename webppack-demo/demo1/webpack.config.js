@@ -8,12 +8,12 @@ module.exports = {
     entry: {
         // app: './src/index.js',
         // print: './src/js/print.js',
-        app: './src/index.js'
+        app: './src'
     },
     output :{
         // filename:'bundle.js',
         filename: '[name].bundle.js',
-        path:path.resolve(__dirname,"dist"),
+        path:path.resolve(__dirname,"dist/js"),
        // publicPath: './'
     },
     devtool: 'none',
@@ -35,7 +35,7 @@ module.exports = {
                     test: /\.css$/,
                     use : ['style-loader','css-loader']
                 },//加载css
-            /*  {
+                {
                     test: /\.(png|svg|jpg|gif)$/,
                     use: ['file-loader']
                 },//加载图片
@@ -50,7 +50,7 @@ module.exports = {
                 {
                     test: /\.xml$/,
                     use: ['xml-loader']
-                },//加载文件*/
+                },//加载文件
             ]
         }
 };
